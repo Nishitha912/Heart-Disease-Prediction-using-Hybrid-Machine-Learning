@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+body, html {
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url("image.jpg");
+  background-repeat: repeat-y;
+  min-height: 1000px;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-img {
+  /* The image used */
+  background-image: url("image.jpg");
+
+  min-height: 1000px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: repeat-y;
+  background-size: cover; 
+  background-attachment: fixed;
+ 
+}
+
+/* Add styles to the form container */
+.container,.cp,.sex  {
+  position: absolute;
+  left:30%;
+  margin: 20px;
+  max-width: 500px;
+  padding: 16px 40px;
+  background-color: light grey;
+ 
+  opacity:0.5;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=name],select
+{
+  width: 100%;
+  padding: 15px;
+  margin:  22px ;
+  border: none;
+  background: grey;
+  background-color:grey;
+}
+input[type=number], input[type=name],select
+{
+  width: 100%;
+  padding: 15px;
+  margin:  22px ;
+  border: none;
+  background: grey;
+  background-color:grey;
+}
+input[type=text]:focus, input[type=disease] :focus ,select {
+ 
+   background-color: white;
+   outline:none;
+   }
+input[type=number]:focus, input[type=disease] :focus ,select {
+ 
+   background-color: white;
+   outline:none;
+   }
+/* Set a style for the submit button */
+.btn {
+ background-color:grey;
+  padding: 16px 30px;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  opacity: 0.7;
+}
+
+.btn:hover {
+ color:black;
+  opacity: 1;
+}
+</style>
+</head>
+<body>
+
+<div class="bg-img">
+  <form class="container" action="http://localhost:9000/s1" method = "post">
+    <h1 style= "font-color:black">PREDICT YOUR HEART DISEASE</h1>
+
+    <label for="prediction"><b>Name</b></label>
+    <input type="text" placeholder="Enter Name" name="nm" required>
+
+    <label for="heart "><b>Age</b></label>
+    <input type="number" placeholder="Enter Age" name="age" required>
+	<label for="Sex"><b>Sex</b></label>
+	<br>
+	<select id="sex" name="sex">
+	<option value=1>Male</option>
+	<option value=0>Female</option>
+	</select>
+	<br>
+	<label for="chest pain"><b>Chest Pain</b></label>
+	<br>
+	<select id="cp" name="cp">
+	<option value=0>Typical angina</option>
+	<option value=1>Atypical angina</option>
+	<option value=2>Non anginal</option>
+	<option value=3>Asymptomatic</option>
+    </select>
+	<br>
+	<label for="heart "><b>Trestbps (94-200)</b></label>
+	<input type="number" placeholder="Enter mm/hg" name="Trestbps" required>
+	<label for="heart "><b>Serum Cholestrol(126-564)</b></label>
+	<input type="number" placeholder="Enter mm/dl" name="chol" required>
+	<label for="FBS"><b>Blood sugar</b></label>
+	<br>
+	<select id="FBS" name="FBS">
+	<option value=1> Typical angina(>120 mg/dl)</option>
+	<option value=0>Atypical angina(< 120 mg/dl)</option>
+    </select>
+	<label for="resting"><b>Resting Electro cardiographic result</b></label>
+	<br>
+	<select id="re" name="resting">
+	<option value=0>Normal</option>
+	<option value=1>Abnormality</option>
+	<option value=2>Hypertrophy</option>
+    </select>
+	 <label for="heart "><b>Maximum heart Rate (71-202)</b></label>
+    <input type="number" placeholder="Enter Thali" name="hr" required>
+	
+	<label for="ang"><b>Exercise induced angina</b></label>
+	<br>
+	<select id="ang" name="angina">
+	<option value=0>No</option>
+	<option value=1>Yes</option>
+	</select>
+	<label for="heart "><b>ST depression(0-6.2)</b></label>
+    <input type="number" placeholder="Enter olpeak" name="st" required>
+	
+	<label for="st"><b>Slope of the peak Exercise ST segment</b></label>
+	<br>
+	<select id="st" name="slope">
+	<option value=0>Unsloping</option>
+	<option value=1>Flat</option>
+	<option value=2>Downsloping</option>
+    </select>
+	
+	<label for="fs"><b>No.of vessels coloured by flourosopy</b></label>
+	<br>
+	<select id="fs" name="vessels">
+	<option value=0>0</option>
+	<option value=1>1</option>
+	<option value=2>2</option>
+	<option value=3>3</option>
+    </select>
+	
+	<label for="tr"><b>Thalium scan Result</b></label>
+	<br>
+	<select id="tr" name="thalium_scan">
+	<option value=1>Normal</option>
+	<option value=2>Fixed Defect</option>
+	<option value=3>Reversible Defect</option>
+	</select>
+    <button type="submit" class="btn">Predict</button>
+  </form>
+</div>
+</body>
+</html>
